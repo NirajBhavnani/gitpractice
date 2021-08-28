@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function makeAjaxCall(){
+            console.log('TESTING')
+            const xhttp  = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function(){
+                console.log(xhttp.readyState)
+                if(xhttp.readyState == 4){
+                    if(xhttp.status >= 200 && xhttp.status < 300){
+                        console.log(xhttp.responseText)
+                    }
+                    else{
+                        console.log('Failure response');
+                    }
+                }
+            }
+            // xhttp.open(methodType, url, async);
+            xhttp.open('get', 'hello.txt');
+            xhttp.send();
+        }
+
+        // Thejashree's code:
+        // function makeajaxcall() {
+
+        // const xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function () {
+        //     console.log(xhttp.readyState)
+        //     if (xhttp.readyState == 4) {
+        //         console.log(xhttp.responseText)
+        //     }
+        // }
+
+        // xhttp.open("get", "hello.txt");
+        // xhttp.send();
+
+        // }
+        
+        var baseUrl = 'hello.txt';
+        function display(data){
+            console.log('Displaying successful', data);
+        }
+
+        makeAjaxCall();
+        
+    </script>
+
+    <!-- <button onclick="makeAjaxCall('GET', 'hello.txt', display, true)">Hello</button> -->
+
+</body>
+</html>
