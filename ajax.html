@@ -24,8 +24,14 @@
                 }
             }
             xhttp.open(methodType, url, async);
-            // xhttp.open('get', 'hello.txt');
-            xhttp.send();
+
+            // for adding
+             if(data){
+                xhttp.setRequestHeader("Content-Type","application/json");
+                xhttp.send(JSON.stringify(data));
+            } else {
+                xhttp.send(); //normal
+            }
         }
 
         var baseUrl = 'http://localhost:3000/employees';
@@ -36,16 +42,32 @@
         
         // Delete
         var baseUrl2 = 'http://localhost:3000/employees/2';
-
+        
         function deleteUser(data){
             console.log(data)
         }
+        
+        // Add
+        var baseUrl3 = 'http://localhost:3000/employees';
+
+        function addData(data){
+            console.log(data);
+        }
+
+        var userData = {
+            "id": 2,
+            "first_name": "Niraj",
+            "last_name": "Bhavnani",
+            "email": "niraj@codingthesmartway.com"
+        }
+        // makeAjaxCall('post', baseUrl3, addData, false, userData)
 
         
     </script>
 
     <button onclick="makeAjaxCall('GET', baseUrl, display, true)">Hello</button>
     <button onclick="makeAjaxCall('delete', baseUrl2, deleteUser, false)">Delete</button>
+    <button onclick="makeAjaxCall('post', baseUrl3, addData, false, userData)">Add</button>
 
 </body>
 </html>

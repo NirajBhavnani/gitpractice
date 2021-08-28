@@ -11,6 +11,18 @@
       "first_name": "Ann",
       "last_name": "Smith",
       "email": "ann@codingthesmartway.com"
+    },
+    {
+      "first_name": "Niraj",
+      "last_name": "Bhavnani",
+      "email": "niraj@codingthesmartway.com",
+      "id": 4
+    },
+    {
+      "id": 2,
+      "first_name": "Niraj",
+      "last_name": "Bhavnani",
+      "email": "niraj@codingthesmartway.com"
     }
   ]
 }
