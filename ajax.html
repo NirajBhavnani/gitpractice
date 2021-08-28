@@ -34,9 +34,18 @@
             console.log('Displaying successful', data);
         }
         
+        // Delete
+        var baseUrl2 = 'http://localhost:3000/employees/2';
+
+        function deleteUser(data){
+            console.log(data)
+        }
+
+        
     </script>
 
     <button onclick="makeAjaxCall('GET', baseUrl, display, true)">Hello</button>
+    <button onclick="makeAjaxCall('delete', baseUrl2, deleteUser, false)">Delete</button>
 
 </body>
 </html>
