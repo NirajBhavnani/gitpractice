@@ -30,6 +30,7 @@ function makeAJAXCall(methodType, url, async=true, data=null){
 
 var baseUrl = 'http://localhost:3000/employees';
 var baseUrl2 = 'http://localhost:3000/employees/5';
+var baseUrl3 = 'http://localhost:3000/employees/5';
         
 function display(data){
     console.log('Displaying successful', data);
@@ -48,6 +49,12 @@ var userData = {
     "first_name": "Smit",
     "last_name": "Koli",
     "email": "smit@codingthesmartway.com"
+}
+
+var newUserData = {
+    "first_name": "Aditya",
+    "last_name": "Uphade",
+    "email": "aditya@codingthesmartway.com"
 }
 
 document.getElementById("helloButton").addEventListener('click', function () {
@@ -70,6 +77,15 @@ document.getElementById("deleteButton").addEventListener('click', function () {
 
 document.getElementById("addButton").addEventListener('click', function () {
     makeAJAXCall('post', baseUrl, true, userData).then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.error(err);
+    })
+})
+
+document.getElementById("editButton").addEventListener('click', function () {
+    makeAJAXCall('put', baseUrl3, true, newUserData).then(data => {
         console.log(data);
     })
     .catch(err => {

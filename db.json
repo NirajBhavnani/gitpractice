@@ -23,6 +23,12 @@
       "first_name": "Niraj",
       "last_name": "Bhavnani",
       "email": "niraj@codingthesmartway.com"
+    },
+    {
+      "first_name": "Aditya",
+      "last_name": "Uphade",
+      "email": "aditya@codingthesmartway.com",
+      "id": 5
     }
   ]
 }
